@@ -1,0 +1,14 @@
+{% extends 'template.html' %}
+
+{% block title %} Форма записи справочника "Университеты" {% endblock %}
+{% block topic %} Форма записи справочника "Университеты": {% endblock %}
+{% block content %}
+    <form method='POST'>
+        {% csrf_token %}
+        <label>Полное название: {{form.full_name}}</label>
+        <label>Сокращенное название: {{form.short_name}}</label>
+        <label>Дата создания: {{form.foundation_date}}</label>
+        <button type="submit">Сохранить</button>
+    </form>
+    <a href="{% url 'universities_guide' %}"> Справочник "Университеты" </a>
+{% endblock %}

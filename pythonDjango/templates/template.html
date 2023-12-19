@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %} {% endblock %}</title>
+    <style>
+        table {
+            border: 1px solid;
+        }
+
+        label {
+            display: block;
+            padding-bottom: 10px;
+        }
+
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border: 1px solid #dddddd;
+            border-collapse: collapse;
+        }
+
+        table th {
+            font-weight: bold;
+            padding: 5px;
+            background: #efefef;
+            border: 1px solid #dddddd;
+        }
+
+        table td {
+            border: 1px solid #dddddd;
+            padding: 5px;
+        }
+
+        h1 {
+            color: #F19CBB;
+            font-size: 14pt;
+        }
+    </style>
+</head>
+<body>
+<h1>{% block topic %} {% endblock %}</h1>
+{% block content %} {% endblock %}
+</body>
+</html>

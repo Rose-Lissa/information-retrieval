@@ -1,0 +1,14 @@
+{% extends 'template.html' %}
+
+{% block title %} Авторизация {% endblock %}
+{% block topic %} Форма авторизации: {% endblock %}
+{% block content %}
+    <form method='POST'>
+        <label>Логин: <input maxlength="20" name="login"></label>
+        <label>Пароль: <input type="password" maxlength="40" name="password"></label>
+        <button type="submit">Войти</button>
+        <p>{{ error }}</p>
+    </form>
+    <a href="/registration">Зарегистрироваться</a>
+    <a href="/">Справочники</a>
+{% endblock %}

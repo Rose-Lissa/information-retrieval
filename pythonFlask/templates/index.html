@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block title %} Справочники {% endblock %}
+{% block topic %} Справочники: {% endblock %}
+{% block content %}
+    <ul>
+        <li><a href="/students">Студенты</a></li>
+        <li><a href="/universities">Университеты</a></li>
+    </ul>
+    {% if is_login %}
+        <a href="/authentication">Авторизоваться</a>
+    {% else %}
+        <a href="/logout">Выйти</a>
+    {% endif %}
+{% endblock %}

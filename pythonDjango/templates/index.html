@@ -1,0 +1,10 @@
+{% extends 'template.html' %}
+
+{% block title %} Справочники {% endblock %}
+{% block topic %} Справочники: {% endblock %}
+{% block content %}
+    <ul>
+        <li><a href="{% url 'students_guide' %}">Студенты</a></li>
+        <li><a href="{% url 'universities_guide' %}">Университеты</a></li>
+    </ul>
+{% endblock %}

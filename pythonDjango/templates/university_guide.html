@@ -1,0 +1,29 @@
+{% extends 'template.html' %}
+
+{% block title %} Справочник "Университеты" {% endblock %}
+{% block topic %} Справочник "Университеты": {% endblock %}
+{% block content %}
+    <table>
+        <thead>
+        <tr>
+            <th>Полное название</th>
+            <th>Сокращенное название</th>
+            <th>Дата создания</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for line in guide %}
+            <tr>
+                <td>{{ line.full_name }}</td>
+                <td>{{ line.short_name }}</td>
+                <td>{{ line.foundation_date }}</td>
+                <td><a href="{% url 'universities_edit' line.id %}">Редактировать</a>
+                    <a href="{% url 'universities_delete' line.id %}">Удалить</a>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'universities_create' %}">Добавить университет</a>
+    <a href="{% url 'index' %}">Список таблиц</a>
+{% endblock %}

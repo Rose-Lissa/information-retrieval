@@ -1,0 +1,11 @@
+{% extends 'template.html' %}
+
+{% block title %} Подтверждение удаление записи из справочника "Университеты" {% endblock %}
+{% block topic %} Подтвердите удаление записи из справочника "Университеты": {% endblock %}
+{% block content %}
+    <form method='POST'>
+        <input name="id" value="{{ id }}" hidden="hidden">
+        <button type="submit">Подтвердить</button>
+    </form>
+    <a href="/universities"> Справочник "Университеты" </a>
+{% endblock %}

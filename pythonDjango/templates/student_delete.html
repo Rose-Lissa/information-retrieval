@@ -1,0 +1,11 @@
+{% extends 'template.html' %}
+
+{% block title %} Подтверждение удаление записи из справочника "Студенты" {% endblock %}
+{% block topic %} Подтвердите удаление записи из справочника "Студенты": {% endblock %}
+{% block content %}
+    <form method='POST'>
+        {% csrf_token %}
+        <button type="submit">Подтвердить</button>
+    </form>
+    <a href="{% url 'students_guide' %}"> Справочник "Студенты" </a>
+{% endblock %}

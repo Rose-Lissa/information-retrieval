@@ -1,0 +1,31 @@
+{% extends 'template.html' %}
+
+{% block title %} Справочник "Студенты" {% endblock %}
+{% block topic %} Справочник "Студенты": {% endblock %}
+{% block content %}
+    <table>
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+            <th>Университет</th>
+            <th>Год поступления</th>
+            <th>Действия</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for line in guide %}
+            <tr>
+                <td>{{ line.name }}</td>
+                <td>{{ line.birthday }}</td>
+                <td>{{ line.university.short_name }}</td>
+                <td>{{ line.admission_year }}</td>
+                <td><a href="/students/{{ line.id }}">Редактировать</a>
+                    <a href="/students/{{ line.id }}/delete">Удалить</a>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/students/create">Добавить студента</a>
+    <a href="/">Перечень справочников</a>
+{% endblock %}

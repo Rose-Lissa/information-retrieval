@@ -1,0 +1,15 @@
+{% extends 'template.html' %}
+
+{% block title %} Форма записи справочника "Студенты" {% endblock %}
+{% block topic %} Форма записи справочника "Студенты": {% endblock %}
+{% block content %}
+    <form method='POST'>
+        {% csrf_token %}
+        <label>ФИО: {{form.name}}</label>
+        <label>Дата рождения: {{form.birthday}}</label>
+        <label>Университет: {{form.university}}</label>
+        <label>Год поступления: {{form.admission_year}}</label>
+        <button type="submit">Сохранить</button>
+    </form>
+    <a href="{% url 'students_guide' %}"> Справочник "Студенты" </a>
+{% endblock %}
